@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use App\Models\{{modelName}};
+use App\Http\Requests\{{modelName}}Request;
+
+class {{modelName}}Controller extends Controller
+{
+    public function index()
+    {
+        return {{modelName}}::all();
+    }
+
+    public function store({{modelName}}Request $request)
+    {
+        return {{modelName}}::create($request->validated());
+    }
+
+    public function show($id)
+    {
+        return {{modelName}}::findOrFail($id);
+    }
+
+    public function update({{modelName}}Request $request, $id)
+    {
+        $model = {{modelName}}::findOrFail($id);
+        $model->update($request->validated());
+        return $model;
+    }
+
+    public function destroy($id)
+    {
+        $model = {{modelName}}::findOrFail($id);
+        $model->delete();
+        return response()->noContent();
+    }
+}
