@@ -30,13 +30,13 @@ This will generate:
 
 ## Troubleshooting
 ### Common Issues
-Missing Cache Table: If you encounter an error related to the cache table not existing, try the following commands:
+- Missing Cache Table: If you encounter an error related to the cache table not existing, try the following commands:
 
 ```bash
 php artisan cache:table
 php artisan migrate
 ```
-Class Not Found Errors: If you encounter related issues try the following command
+- Class Not Found Errors: If you encounter related issues try the following command
 
 ```bash
 composer dump-autoload
