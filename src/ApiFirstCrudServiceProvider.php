@@ -9,7 +9,6 @@ class ApiFirstCrudServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        // Register the command
         $this->commands([
             CrudGeneratorCommand::class,
         ]);

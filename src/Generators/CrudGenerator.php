@@ -47,7 +47,7 @@ class CrudGenerator
 
     protected function generateRequest()
     {
-        // Ensure the directory exists
+        // Checking if the directory exists
         $directory = app_path('Http/Requests');
         if (!File::exists($directory)) {
             File::makeDirectory($directory, 0755, true);
