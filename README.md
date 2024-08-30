@@ -29,7 +29,7 @@ This will generate:
 
 
 ## Troubleshooting
-# Common Issues
+#### Common Issues
 Missing Cache Table: If you encounter an error related to the cache table not existing, try these following commands:
 
 ```bash
