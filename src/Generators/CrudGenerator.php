@@ -64,7 +64,7 @@ class CrudGenerator
     
     protected function generateMigration()
     {
-        $tableName = strtolower(str_plural($this->name));
+        $tableName = Str::plural(strtolower($this->name));
         $migrationTemplate = str_replace(
             ['{{tableName}}'],
             [$tableName],
@@ -79,7 +79,7 @@ class CrudGenerator
     {
         $routeTemplate = str_replace(
             ['{{modelNamePluralLowerCase}}', '{{modelName}}'],
-            [strtolower(str_plural($this->name)), $this->name],
+            [Str::plural(strtolower($this->name)), $this->name],
             $this->getStub('Routes')
         );
 
