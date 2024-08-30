@@ -36,7 +36,7 @@ Missing Cache Table: If you encounter an error related to the cache table not ex
 php artisan cache:table
 php artisan migrate
 ```
-Class Not Found Errors: If you encounter issues try this following command
+Class Not Found Errors: If you encounter related issues try this following command
 
 ```bash
 composer dump-autoload
