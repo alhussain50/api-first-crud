@@ -47,15 +47,21 @@ class CrudGenerator
 
     protected function generateRequest()
     {
+        // Ensure the directory exists
+        $directory = app_path('Http/Requests');
+        if (!File::exists($directory)) {
+            File::makeDirectory($directory, 0755, true);
+        }
+    
         $requestTemplate = str_replace(
             ['{{modelName}}'],
             [$this->name],
             $this->getStub('Request')
         );
-
-        File::put(app_path("/Http/Requests/{$this->name}Request.php"), $requestTemplate);
+    
+        File::put(app_path("Http/Requests/{$this->name}Request.php"), $requestTemplate);
     }
-
+    
     protected function generateMigration()
     {
         $tableName = strtolower(str_plural($this->name));
