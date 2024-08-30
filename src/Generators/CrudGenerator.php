@@ -3,6 +3,7 @@
 namespace Jatri\ApiFirstCrud\Generators;
 
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class CrudGenerator
 {
@@ -37,10 +38,10 @@ class CrudGenerator
     {
         $controllerTemplate = str_replace(
             ['{{modelName}}', '{{modelNamePluralLowerCase}}'],
-            [$this->name, strtolower(str_plural($this->name))],
+            [$this->name, Str::plural(strtolower($this->name))],
             $this->getStub('Controller')
         );
-
+    
         File::put(app_path("/Http/Controllers/{$this->name}Controller.php"), $controllerTemplate);
     }
 
